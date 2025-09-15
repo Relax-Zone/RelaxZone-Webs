@@ -1,5 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { User2 , DoorOpen } from "lucide-react"
+import Link from "next/link";
+
 export default function Home() {
 	return (
 		<div className="relative h-dvh w-dvw">
@@ -11,8 +15,15 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="absolute z-10 h-full w-full flex items-center justify-center">
-				<div>
-					<h1 className="uppercase text-6xl font-bold"><span className="text-red-500">R</span>elax<span className="text-red-500">Z</span>one</h1>
+				<div className="flex flex-col items-center">
+					<h1 className="uppercase text-6xl font-bold mb-2"><span className="text-red-500">R</span>elax<span className="text-red-500">Z</span>one</h1>
+					<p className="font-geist-mono uppercase py-1 px-2 rounded-sm bg-white border border-zinc-300 mb-6">Website is construction 🚧</p>
+					<div className="flex items-center gap-2">
+						<Button variant={"secondary"} size={"lg"} className="hover:cursor-not-allowed"><User2 /> Login to Website</Button>
+						<Link href={"https://discord.gg/DcFpttB"} target="_blank">
+						 <Button className="bg-red-500" size={"lg"}><DoorOpen /> Join Server!</Button>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</div>
