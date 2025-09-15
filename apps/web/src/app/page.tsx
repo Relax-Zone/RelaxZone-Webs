@@ -1,44 +1,19 @@
 "use client";
 
-import { hc } from "hono/client";
-import type { api } from "../../../server/src/index";
-
-const TITLE_TEXT = `
- ██████╗ ███████╗████████╗████████╗███████╗██████╗
- ██╔══██╗██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗
- ██████╔╝█████╗     ██║      ██║   █████╗  ██████╔╝
- ██╔══██╗██╔══╝     ██║      ██║   ██╔══╝  ██╔══██╗
- ██████╔╝███████╗   ██║      ██║   ███████╗██║  ██║
- ╚═════╝ ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
-
- ████████╗    ███████╗████████╗ █████╗  ██████╗██╗  ██╗
- ╚══██╔══╝    ██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
-    ██║       ███████╗   ██║   ███████║██║     █████╔╝
-    ██║       ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
-    ██║       ███████║   ██║   ██║  ██║╚██████╗██║  ██╗
-    ╚═╝       ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
- `;
-
-const client = hc<typeof api>("http://localhost:3000");
-
 export default function Home() {
-
-	async function checkApi() { 
-		const res = await client.index.$post({json:{
-			body: "test",
-			title: "test"
-		}})
-		console.log(res)
-	}
-
 	return (
-		<div className="container mx-auto max-w-3xl px-4 py-2">
-			<pre className="overflow-x-auto font-mono text-sm">{TITLE_TEXT}</pre>
-			<div className="grid gap-6">
-				<section className="rounded-lg border p-4">
-					<h2 className="mb-2 font-medium">API Status</h2>
-					<button onClick={checkApi}>Check API</button>
-				</section>
+		<div className="relative h-dvh w-dvw">
+			<div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+				<div className="w-full h-full relative">
+					<div className="bg-white/5 absolute top-0 left-0 w-full h-full z-10 backdrop-blur-2xl" />
+					<div className="absolute -right-10 top-10 w-50 h-50 rounded-full bg-red-500" />
+					<div className="absolute -bottom-10 -left-10 w-100 h-100 rounded-full bg-red-500" />
+				</div>
+			</div>
+			<div className="absolute z-10 h-full w-full flex items-center justify-center">
+				<div>
+					<h1 className="uppercase text-6xl font-bold"><span className="text-red-500">R</span>elax<span className="text-red-500">Z</span>one</h1>
+				</div>
 			</div>
 		</div>
 	);
