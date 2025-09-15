@@ -12,6 +12,7 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.7.2",
     "@opennextjs/cloudflare": "^1.6.5",
     "@tanstack/react-form": "^1.12.3",
     "@tanstack/react-query": "^5.85.5",
